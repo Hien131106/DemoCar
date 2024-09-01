@@ -3,8 +3,6 @@
 
 BluetoothSerial SerialBT;
 
-#define R 0
-#define L 1
 char btSignal;
 int speed = 100;
 
@@ -26,10 +24,8 @@ void setup(){
   pinMode(in3, OUTPUT);
   pinMode(in4, OUTPUT);
 
-  ledcSetup(R, 5000, 8);
-  ledcAttachPin(enA, R);
-  ledcSetup(L, 5000, 8);
-  ledcAttachPin(enB, L);
+  analogWrite(enA, speed);
+  analogWrite(enB, speed);
 
   digitalWrite(in1, LOW);
   digitalWrite(in2, LOW);
